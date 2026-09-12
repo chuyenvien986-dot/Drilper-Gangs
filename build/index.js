@@ -114,7 +114,7 @@ function embedDMGuide() {
         .setColor(CFG.COLOR_MAIN)
         .setAuthor({ name: `🚀 ${CFG.BRAND_NAME} — ${CFG.BRAND_OWNER}` })
         .setDescription(
-            `**Xin chào!** 👋 Bot join by **${CFG.BRAND_OWNER}**\n\n` +
+            `**Xin chào!** 👋 Tool join by **${CFG.BRAND_OWNER}**\n\n` +
             `📌 **BƯỚC 1:** Gửi token tại đây!\n` +
             `• Paste text thẳng *(mỗi dòng 1 token)*\n` +
             `• Hoặc đính kèm file \`.txt\` *(không giới hạn)*\n\n` +
@@ -497,7 +497,7 @@ async function runJoiner(author, channelId, guildId, tokens) {
         });
     }
 
-    
+    // flush cuối
     await updateProgress(true);
 
     // tin #3: done
@@ -507,7 +507,7 @@ async function runJoiner(author, channelId, guildId, tokens) {
         "IMG_DONE"
     ).catch(() => {});
 
-    
+    // DM kết quả
     await sendDM(
         author,
         embedDone(guild.name, tokens.length, done, failed),
